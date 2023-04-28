@@ -1,0 +1,18 @@
+# server configuration
+logtype: demoapplog
+
+# 默认超时时间, 超过这个时间没有处理完成会直接返回错误，减少客户端等待
+defaultTimeout: 2000
+
+# gRPC service port
+gRPCServiceBind: ":8111"
+
+# http service port
+httpServiceBind: ":8110"
+httpServiceGrpc: "localhost:8111"
+
+# http metrics port
+httpMetricsBind: ":8100"
+
+# 是否开启服务耗时的统计，开启后性能有一定的降低，单机吞吐从4.5w降低到4.4w
+enableHandlingTime: true

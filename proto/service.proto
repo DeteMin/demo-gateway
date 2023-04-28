@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/api/annotations.proto";
+
+message Request {
+    string slang = 1; // source language
+    string tlang = 2; // target language
+    string text = 3; // original text
+}
+
+message Response {
+    string retcode = 1; // return code
+    string retdesc = 2; // return description
+    string result = 3; // translate result
+}
+
+// Translate service
+service TranslateService {
+    // Translate method
+    rpc Translate (Request) returns (Response) {
+        option (google.api.http) = {
+           post: "/v1/trans"
+           body: "*"
+       };
+    }
+}

@@ -1,0 +1,39 @@
+#组件名 测试
+Component: demoapp
+#本机ip 配置为127.0.0.1会尝试获取本机ip
+LocalIp: 127.0.0.1
+#服务对外暴露的端口号
+ServicePort: 8080
+#服务部署的机房
+Room: HF
+
+#是否使用安全模式,效率低,数据实时落地,不丢失
+UseSafeMode: false
+#不回滚本地日志的队列百分比阈值
+NoSchedulePercentage: 50
+#日志类库的连接池大小
+ConnectPoolSize: 10
+#日志类库的内存队列大小
+SendQueueSize: 20000
+#日志类库发送到flume的批量大小
+FlumeBatchSize: 100
+#flume的连接超时时间 单位毫秒
+FlumeConnectTimeOut: 60000
+#flume健康检查的时间间隔 单位毫秒
+PingScheduleIntervalTime: 1000
+#flume健康检查的超时时间 单位毫秒
+PingTimeOut: 1000
+#Flume Agent ip:port:weight~ip:port:weight
+FlumeAgent: "172.16.82.119:32100:1"
+
+LocalLogDir: "/tmp/demoapp/flume"
+LocalIPPrefix:
+  - 10
+  - 172
+  - 192.168
+
+LocalBizLogPath: "/tmp/demoapp/local/biz.log"
+LocalEnable: false
+RemoteEnable: false
+LocalConsoleEnable: true
+LocalLogPrettify: true
